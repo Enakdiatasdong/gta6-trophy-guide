@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI Platinum Tracker</title>
+<meta name="description" content="The complete GTA VI trophy guide: all 55 PS5 trophies with grades, a platinum roadmap, missable warnings, spoiler-safe tracking and offline progress.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+  <h1>Leonida Trophy Guide</h1>
+  <p class="tagline">Every trophy, every grade, one road to the platinum — <strong>Vice Got a Price!</strong></p>
+  <div class="progress-wrap" role="status" aria-live="polite">
+    <div class="progress-numbers"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+    <div class="progress-bar"><div id="progressFill"></div></div>
+    <p class="progress-sub" id="progressSub">Platinum progress: earn the other 54 trophies.</p>
+  </div>
+  <dl class="stats">
+    <div><dt>Platinum</dt><dd id="statPlat">0 / 1</dd></div>
+    <div><dt>Gold</dt><dd id="statGold">0 / 2</dd></div>
+    <div><dt>Silver</dt><dd id="statSilver">0 / 6</dd></div>
+    <div><dt>Bronze</dt><dd id="statBronze">0 / 46</dd></div>
+    <div><dt>Time to platinum</dt><dd>~200 h</dd></div>
+    <div><dt>Difficulty</dt><dd>4 / 10</dd></div>
+  </dl>
+</header>
+
+<main>
+  <section class="roadmap" id="roadmap">
+    <h2><span class="step-dot">◆</span> Road to the platinum</h2>
+    <p class="roadmap-intro">One playthrough is enough. No online trophies, no DLC needed — but one trophy can be missed, so start it early. Cheats disable trophies: keep them off until the platinum pops.</p>
+    <ol class="roadmap-steps" id="roadmapSteps"></ol>
+  </section>
+
+  <section class="controls" aria-label="Trophy filters and progress tools">
+    <div class="chips" id="kindChips" role="group" aria-label="Filter by kind">
+      <button type="button" data-kind="all" class="chip active">All <span>55</span></button>
+      <button type="button" data-kind="story" class="chip">Story <span>12</span></button>
+      <button type="button" data-kind="missable" class="chip chip-missable">⚠ Missable <span>1</span></button>
+      <button type="button" data-kind="collectibles" class="chip">Collectibles <span>6</span></button>
+      <button type="button" data-kind="activities" class="chip">Activities <span>36</span></button>
+      <button type="button" data-kind="online" class="chip">Online <span>0</span></button>
+    </div>
+    <div class="control-row">
+      <label>Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>Show
+        <select id="earnedFilter">
+          <option value="all">All trophies</option>
+          <option value="earned">Earned only</option>
+          <option value="missing">Not earned yet</option>
+        </select>
+      </label>
+      <label class="search">Search
+        <input id="search" type="search" placeholder="Name or description…" autocomplete="off">
+      </label>
+      <label class="toggle"><input id="spoilerToggle" type="checkbox" checked> <span>Spoiler-safe mode</span></label>
+      <button id="exportBtn" type="button">Export progress (JSON)</button>
+      <label class="import-btn">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" type="button" class="danger">Reset</button>
+    </div>
+    <p class="controls-note" id="filterNote"></p>
+  </section>
+
+  <div class="layout">
+    <section class="list-col" aria-label="Trophy checklist">
+      <h2 id="listHeading">Checklist</h2>
+      <p class="list-count" id="listCount"></p>
+      <ul class="trophy-list" id="trophyList"></ul>
+      <div class="empty-state" id="emptyState" hidden>
+        <h3>No online trophies</h3>
+        <p>All 55 GTA VI trophies are offline, single-player — there is nothing to earn in GTA Online for this list. PowerPyx confirms the platinum needs no multiplayer and no DLC.</p>
+      </div>
+    </section>
+
+    <aside class="detail-col" aria-label="Trophy detail">
+      <div class="detail" id="detailPanel">
+        <p class="detail-hint">Select a trophy on the left to see its full guide and sources here.</p>
+      </div>
+      <div class="sources-box">
+        <h3>Sources</h3>
+        <p>Trophy names, descriptions and grades are the official PS5 list as reported 18 Nov 2026 (PSNProfiles / TrueTrophies / Exophase). Difficulty, time and missable guidance follow PowerPyx and GTABase, cross-checked against the guides below.</p>
+        <ul id="sourceList"></ul>
+        <p class="fineprint">This is an unofficial fan guide. Not affiliated with Rockstar Games. No official artwork or logos are used.</p>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <p>Leonida Trophy Guide — unofficial fan guide for GTA VI on PS5. Progress is stored only in your browser (localStorage); nothing leaves your device. Export it to keep a backup.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
